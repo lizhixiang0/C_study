@@ -39,7 +39,7 @@ int  main3() {
 	//scanf()是C语言中的一个输入函数。被声明在头文件stdio.h里，相当于java的scanner
 	//scanf是c语言库文件提供的，vs觉得不安全，就弄了个scanf_s出来，但是它只能在vs上编译，破坏跨平台性，所以不推荐使用
 	//如果要去掉警告，就在开头第一行加上 #define _CRT_SECURE_NO_WARNINGS，如果不想每次都在新的源文件加这句可以改vs的newc++file.cpp文件
-	scanf("%d%d",&num1,&num2); //取地址符号'&'  
+	int statuscode = scanf("%d%d",&num1,&num2); //取地址符号'&'  ,这个函数有个返回值，如果不接收vs会报警告
 	sum = num1 + num2; 
 	printf("sum=%d", sum);  //我这里不小心写成pringf了，结果这破ide居然没帮我检测出来，操
 	return 0;
@@ -56,5 +56,18 @@ int main4() {
 	enum Color{YELLOW,RED,BLUE};
 	enum Color color = RED;
 	printf("%d\n%d\n", color,RED);//2 ,这个用法和java差不多
+	return 0;
+}
+// 学习C语言的字符串类型
+int main() {
+	char arr1[] = "abc";  //"abc" == 'a' 'b' 'c' '\0'  ---》 "\0"是字符串的结束标志，值是0
+	char arr2[] = { 'a','b','c'}; // 这个形式的数组没有结束标志！如果不加0，即找不到结束标志就会随机打印一些随机值,{ 'a','b','c',0}
+
+	printf("%s\n", arr1);
+	printf("%s\n",arr2);
+
+	//计算字符串的长度
+	printf("%d\n", strlen(arr1));
+	printf("%d\n", strlen(arr2));  //找结束标志'\0'，找不到就在随机值里面找，直到找到0
 	return 0;
 }
