@@ -21,5 +21,8 @@
     <ClCompile Include="data_structure_2.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="logic.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

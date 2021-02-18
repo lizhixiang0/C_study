@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1 //必须放在第一行
 #include <stdio.h>
+#include <string.h>   
 
 //字符数据类型   char   占1个字节   8bit   00000000   -128 ~ +127
 //整形     int          占4个字节   32bit  00000000 ...
@@ -58,16 +59,40 @@ int main4() {
 	printf("%d\n%d\n", color,RED);//2 ,这个用法和java差不多
 	return 0;
 }
+//  数据结构
+int main5() {
+	int array[10];  // 定义一个可以存放10个整型数字的数组
+	char arr[3] = { 'a','b','c'};   // 定义一个可以存放3个字符数据类型的数组,然后赋值
+	printf('%d', arr[2]); // 访问arr数组下标为2的元素
+	return 0;
+}
 // 学习C语言的字符串类型
-int main() {
+int main6() {
 	char arr1[] = "abc";  //"abc" == 'a' 'b' 'c' '\0'  ---》 "\0"是字符串的结束标志，值是0
-	char arr2[] = { 'a','b','c'}; // 这个形式的数组没有结束标志！如果不加0，即找不到结束标志就会随机打印一些随机值,{ 'a','b','c',0}
+	char arr2[] = { 'a','b','c'}; // 这个形式的数组没有结束标志！如果不加0，即找不到结束标志就会随机打印一些随机值,手动添加0:{ 'a','b','c',0}}
 
 	printf("%s\n", arr1);
 	printf("%s\n",arr2);
 
 	//计算字符串的长度
-	printf("%d\n", strlen(arr1));
+	printf("%d\n", strlen(arr1));  // strlen需要引入 #include <string.h> 
 	printf("%d\n", strlen(arr2));  //找结束标志'\0'，找不到就在随机值里面找，直到找到0
 	return 0;
 }
+
+//转义字符 ‘\’
+int main7() {
+	printf("C:\test\n");//打印结果是这个"C:      est",因为\t是一个水平制表符
+	printf("C:\\test\n");// '\\'用于表示反斜杠自身的意思，以防被解释为转义字符
+	printf("%c\n",'\'');// 打印一个单引号
+	printf("%d\n",strlen("\32")); // "\32 表示一个八进制数字对应的ASCII字符   八进制32转化为十进制是26
+	printf("%d\n", strlen("\32x")); // "\32x"表示一个十六进制数字对应的ASCII字符 十六进制32转化为十进制是50
+	return 0;
+}
+// 操作符
+int main8() {
+   //算术操作符   + - * / %
+   //移位操作符   << 、>>
+   //
+}
+
