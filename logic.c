@@ -7,10 +7,7 @@ int main3_1() {
 	}
 	return 0;
 }
-// Ñ­»·Óï¾ä
-int main() {
 
-}
 
 //º¯Êı
 int add(int a, int b) {
